@@ -10,18 +10,11 @@ services:
       - JWT_SECRET=4800d71386f9859ec53c607e867601c3
     depends_on:
       - mongo
-    networks:
-      - app-network
   mongo:
     image: mongo:6.0
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
-    networks:
-      - app-network
-networks:
-  app-network:
-    driver: bridge
 volumes:
   mongo_data:
